@@ -19,27 +19,27 @@ public class LoginSteps {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
-    @When("enter {string} and {string}")
-    public void enter_and(String username, String password) {
+    @When("users enter {string} and {string}")
+    public void users_enter_and(String username, String password) {
         loginvalid.username.sendKeys(username);
         loginvalid.password.sendKeys(password);
 
     }
 
-    @When("click the login button")
-    public void click_the_login_button() {
+    @When("users click the login button")
+    public void users_click_the_login_button() {
         loginvalid.loginButton.click();
     }
 
 
-    @When("hit the enter button from keyboard")
-    public void hit_the_enter_button_from_keyboard() {
+    @When("users hit the enter button from keyboard")
+    public void users_hit_the_enter_button_from_keyboard() {
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.ENTER).perform();
     }
 
-    @Then("user should be on the dashboard")
-    public void user_should_be_on_the_dashboard() {
+    @Then("users should be on the dashboard")
+    public void users_should_be_on_the_dashboard() {
 
         String expectedUrl = "https://qa.seamlessly.net/index.php/apps/dashboard/#/";
         String actualUrl = Driver.getDriver().getCurrentUrl();
