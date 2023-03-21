@@ -24,7 +24,11 @@ public class LoginPage {
     @FindBy(xpath = "//p[@class='warning wrongPasswordMsg']")
     public WebElement message;
 
+    @FindBy(css = "a.toggle-password")
+    public WebElement toggle;
 
+    @FindBy(id="lost-password")
+    public WebElement forgotPasswordLink;
 
 
 

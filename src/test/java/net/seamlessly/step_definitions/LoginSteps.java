@@ -48,12 +48,29 @@ public class LoginSteps {
 
     @Then("user should see {string}")
     public void user_should_see(String message) {
+            Assert.assertEquals(message, loginPage.message.getText());
+    }
 
+    @Then("user should see blank {string}")
+    public void user_should_blank_see(String message) {
         if (loginPage.username.getAttribute("validationMessage").equals(message) || loginPage.password.getAttribute("validationMessage").equals(message)) {
             Assert.assertTrue(true);
-        } else if (message.equals("Wrong username or password.")) {
-            Assert.assertEquals(message, loginPage.message.getText());
         }
     }
+
+    @Then("User should see the password in a form of dots")
+    public void user_should_see_the_password_in_a_form_of_dots() {
+        Assert.assertEquals("password",loginPage.password.getAttribute("type"));
+    }
+
+    @When("user clicks on toggle image")
+    public void user_clicks_on_toggle_image() {
+        loginPage.toggle.click();
+    }
+    @Then("User can see the password explicitly")
+    public void user_can_see_the_password_explicitly() {
+    Assert.assertEquals("text",loginPage.password.getAttribute("type"));
+    }
+
 
 }
