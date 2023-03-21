@@ -30,6 +30,12 @@ public class LoginPage {
     @FindBy(id="lost-password")
     public WebElement forgotPasswordLink;
 
+    @FindBy(id="reset-password-wrapper")
+    public WebElement resetPasswordLink;
 
+    @FindBy(xpath = "//input[@placeholder='Username or email']")
+    public WebElement usernamePlaceholder;
 
+    @FindBy(xpath = "//input[@placeholder='Password']")
+    public WebElement passwordPlaceholder;
 }

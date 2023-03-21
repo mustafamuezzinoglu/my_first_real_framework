@@ -51,4 +51,21 @@ Feature: Seamlessly login Function
     And  user clicks on toggle image
     Then User can see the password explicitly
 
+  @SEAMLES10-528 #US1 AC5
+  Scenario: Forgot password? link is displayed
+    Then user should see the "Forgot password?" link on the login page
+
+  @SEAMLES10-529 #US1 AC5-2
+  Scenario: Reset Password link is displayed after clicking on forget password link
+    When  user clicks the "Forgot password" link
+    Then user should see the "Reset Password" link
+
+  @wip   @SEAMLES10-531 #US1 AC6
+  Scenario: valid placeholders fields
+    Then user should see valid placeholder on "Username or email"  field
+
+  @wip   @SEAMLES10-532 #US1 AC6
+  Scenario: valid placeholders fields
+    Then user should see valid placeholder on "Password" field
+
 
