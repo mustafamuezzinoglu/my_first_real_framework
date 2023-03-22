@@ -12,13 +12,13 @@ Feature: Seamlessly login Function
     And   user clicks the login button
     Then  user should be on the dashboard
 
-  @SEAMLES10-524 #US1 AC1-2
+  @SEAMLES10-506 #US1 AC1-2
   Scenario: login with valid credentials by hitting the "Enter" key from keyboard
     When  user enters "Employee3" and "Employee123"
     And   user hit the enter button from keyboard
     Then  user should be on the dashboard
 
-  @SEAMLES10-506 #US1 AC2
+  @SEAMLES10-519 #US1 AC2
   Scenario Outline: login with any invalid credentials
     When user enters "<username>" and "<password>"
     And user clicks the login button
@@ -40,7 +40,7 @@ Feature: Seamlessly login Function
       | Employee |          | Please fill out this field. |
       |          |          | Please fill out this field. |
 
-  @SEAMLES10-519 #US1 AC3
+  @SEAMLES10-524 #US1 AC3
   Scenario: password in a form of dots
     When  user enters "Employee2" and "Employee123"
     Then User should see the password in a form of dots
