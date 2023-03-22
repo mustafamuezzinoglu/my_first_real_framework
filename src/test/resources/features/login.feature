@@ -64,7 +64,7 @@ Feature: Seamlessly login Function
   Scenario: valid placeholders fields
     Then user should see valid placeholder on "Username or email"  field
 
-  @wip   @SEAMLES10-532 #US1 AC6
+  @wip   @SEAMLES10-532 #US1 AC6-2
   Scenario: valid placeholders fields
     Then user should see valid placeholder on "Password" field
 
