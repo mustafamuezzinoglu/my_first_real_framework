@@ -22,8 +22,8 @@ public class Login_steps {
 
     @When("user enters {string} and {string}")
     public void user_enters_and(String username, String password) {
-        loginPage.userName.sendKeys(username);
-        loginPage.passWord.sendKeys(password);
+        loginPage.userNameInputBox.sendKeys(username);
+        loginPage.passWordInputBox.sendKeys(password);
 
     }
 
@@ -54,14 +54,14 @@ public class Login_steps {
 
     @Then("user should see blank {string}")
     public void user_should_blank_see(String message) {
-        if (loginPage.userName.getAttribute("validationMessage").equals(message) || loginPage.passWord.getAttribute("validationMessage").equals(message)) {
+        if (loginPage.userNameInputBox.getAttribute("validationMessage").equals(message) || loginPage.passWordInputBox.getAttribute("validationMessage").equals(message)) {
             Assert.assertTrue(true);
         }
     }
 
     @Then("User should see the password in a form of dots")
     public void user_should_see_the_password_in_a_form_of_dots() {
-        Assert.assertEquals("password", loginPage.passWord.getAttribute("type"));
+        Assert.assertEquals("password", loginPage.passWordInputBox.getAttribute("type"));
     }
 
     @When("user clicks on toggle image")
@@ -71,7 +71,7 @@ public class Login_steps {
 
     @Then("User can see the password explicitly")
     public void user_can_see_the_password_explicitly() {
-        Assert.assertEquals("text", loginPage.passWord.getAttribute("type"));
+        Assert.assertEquals("text", loginPage.passWordInputBox.getAttribute("type"));
     }
 
     @Then("user should see the {string} link on the login page")
