@@ -60,11 +60,11 @@ Feature: Seamlessly login Function
     When  user clicks the "Forgot password" link
     Then user should see the "Reset Password" link
 
-  @wip   @SEAMLES10-531 #US1 AC6
+  @SEAMLES10-531 #US1 AC6
   Scenario: valid placeholders fields
     Then user should see valid placeholder on "Username or email"  field
 
-  @wip   @SEAMLES10-532 #US1 AC6-2
+  @SEAMLES10-532 #US1 AC6-2
   Scenario: valid placeholders fields
     Then user should see valid placeholder on "Password" field
 
