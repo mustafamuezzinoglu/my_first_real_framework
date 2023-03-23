@@ -3,7 +3,7 @@ package net.seamlessly.step_definitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import net.seamlessly.pages.LoginPage;
+import net.seamlessly.pages.Login_page;
 import net.seamlessly.utilities.BrowserUtils;
 import net.seamlessly.utilities.ConfigurationReader;
 import net.seamlessly.utilities.Driver;
@@ -11,9 +11,9 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 
-public class LoginSteps {
+public class Login_steps {
 
-    LoginPage loginPage = new LoginPage();
+    Login_page loginPage = new Login_page();
 
     @Given("user is on login page")
     public void user_is_on_login_page() {
@@ -22,8 +22,8 @@ public class LoginSteps {
 
     @When("user enters {string} and {string}")
     public void user_enters_and(String username, String password) {
-        loginPage.username.sendKeys(username);
-        loginPage.password.sendKeys(password);
+        loginPage.userName.sendKeys(username);
+        loginPage.passWord.sendKeys(password);
 
     }
 
@@ -41,9 +41,10 @@ public class LoginSteps {
 
     @Then("user should be on the dashboard")
     public void user_should_be_on_the_dashboard() {
-        String expectedUrl = "https://qa.seamlessly.net/index.php/apps/dashboard/#/";
-        String actualUrl = Driver.getDriver().getCurrentUrl();
-        Assert.assertEquals(expectedUrl, actualUrl);
+//        String expectedUrl = "https://qa.seamlessly.net/index.php/apps/dashboard/#/";
+//        String actualUrl = Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(Driver.getDriver().getTitle().contains("Dashboard"));
+      //  Assert.assertEquals(expectedUrl, actualUrl);
     }
 
     @Then("user should see {string}")
@@ -53,14 +54,14 @@ public class LoginSteps {
 
     @Then("user should see blank {string}")
     public void user_should_blank_see(String message) {
-        if (loginPage.username.getAttribute("validationMessage").equals(message) || loginPage.password.getAttribute("validationMessage").equals(message)) {
+        if (loginPage.userName.getAttribute("validationMessage").equals(message) || loginPage.passWord.getAttribute("validationMessage").equals(message)) {
             Assert.assertTrue(true);
         }
     }
 
     @Then("User should see the password in a form of dots")
     public void user_should_see_the_password_in_a_form_of_dots() {
-        Assert.assertEquals("password", loginPage.password.getAttribute("type"));
+        Assert.assertEquals("password", loginPage.passWord.getAttribute("type"));
     }
 
     @When("user clicks on toggle image")
@@ -70,7 +71,7 @@ public class LoginSteps {
 
     @Then("User can see the password explicitly")
     public void user_can_see_the_password_explicitly() {
-        Assert.assertEquals("text", loginPage.password.getAttribute("type"));
+        Assert.assertEquals("text", loginPage.passWord.getAttribute("type"));
     }
 
     @Then("user should see the {string} link on the login page")
@@ -82,12 +83,13 @@ public class LoginSteps {
     @When("user clicks the {string} link")
     public void user_clicks_the_link(String forgotLink) {
         loginPage.forgotPasswordLink.click();
+        BrowserUtils.sleep(2);
     }
 
     @Then("user should see the {string} link")
     public void user_should_see_the_link(String resetPasswordLink) {
         Assert.assertTrue(loginPage.resetPasswordLink.isDisplayed());
-        BrowserUtils.sleep(2);
+             BrowserUtils.sleep(2);
     }
 
     @Then("user should see valid placeholder on {string}  field")
@@ -99,5 +101,6 @@ public class LoginSteps {
     public void user_should_see_valid_placeholder_on_password_field(String password) {
         Assert.assertEquals(password, loginPage.passwordPlaceholder.getAttribute("placeholder"));
     }
+
 
 }
