@@ -1,5 +1,13 @@
 
+@SEAMLES10-375 #user story
+
 Feature: Logout function
+
+  # User Story :
+  # As a user, I should be able to log out.
+  # Acceptance Criteria:
+  # 1-User can log out and ends up in login page
+  # 2-User can not go to home page again by clicking step back button after successfully logged out.
 
   Background:
     Given user logged in
