@@ -29,8 +29,8 @@ public class Logout_steps extends BasePage {
         BrowserUtils.sleep(2);
     }
 
-    @Then("user can go back to the login page")
-    public void user_can_go_back_to_the_login_page() {
+    @Then("user should go back to the login page")
+    public void user_should_go_back_to_the_login_page() {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("login"));
     }
 
@@ -44,8 +44,8 @@ public class Logout_steps extends BasePage {
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.BACK_SPACE);
     }
-    @Then("user can not go to home page again")
-    public void user_can_not_go_to_home_page_again() {
+    @Then("user should not go to home page again")
+    public void user_should_not_go_to_home_page_again() {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("login"));
     }
 

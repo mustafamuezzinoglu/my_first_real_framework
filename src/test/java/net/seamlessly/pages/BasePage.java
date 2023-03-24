@@ -22,7 +22,6 @@ public class BasePage {
     }
 
     public void logoutMethod(){
-//        loginMethod(ConfigurationReader.getProperty("username"), ConfigurationReader.getProperty("password"));
         avatarImage.click();
         logoutButton.click();
     }

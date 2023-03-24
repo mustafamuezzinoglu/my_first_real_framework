@@ -63,7 +63,7 @@ Feature: Seamlessly login Function
   Scenario:  password explicitly if needed
     When  user enters "Employee2" and "Employee123"
     And  user clicks on toggle image
-    Then User can see the password explicitly
+    Then User should see the password explicitly
 
   @SEAMLES10-528 @wip #US1 AC5
   Scenario: Forgot password? link is displayed
