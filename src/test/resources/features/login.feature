@@ -19,13 +19,13 @@ Feature: Seamlessly login Function
   Background:
     Given user is on login page
 
-  @SEAMLES10-505 @wip #US1 AC1
+ @smoke @SEAMLES10-505 @wip #US1 AC1
   Scenario: login with valid credentials by clicking on the "Login button"
     When  user enters "Employee2" and "Employee123"
     And   user clicks the login button
     Then  user should be on the dashboard
 
-  @SEAMLES10-506 @wip #US1 AC1-2
+  @smoke @SEAMLES10-506 @wip #US1 AC1-2
   Scenario: login with valid credentials by hitting the "Enter" key from keyboard
     When  user enters "Employee3" and "Employee123"
     And   user hit the enter button from keyboard
@@ -75,7 +75,7 @@ Feature: Seamlessly login Function
     When  user clicks the "Forgot password" link
     Then user should see the "Reset Password" link
 
-  @SEAMLES10-531@wip  #US1 AC6
+  @smoke @SEAMLES10-531@wip  #US1 AC6
   Scenario: valid placeholders fields
     Then user should see valid placeholder on "Username or email"  field
 

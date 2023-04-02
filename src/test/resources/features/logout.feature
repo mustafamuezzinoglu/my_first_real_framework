@@ -11,7 +11,7 @@ Feature: Logout function
   Background:
     Given user logged in
 
-  @SEAMLES10-535 @wip #US1 AC1
+  @smoke @SEAMLES10-535 @wip #US1 AC1
   Scenario: Logout and ends up in login page
     When user clicks on the avatar image dropdown
     And user clicks on the Log out button
